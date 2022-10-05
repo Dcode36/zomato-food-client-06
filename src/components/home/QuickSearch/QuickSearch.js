@@ -46,7 +46,7 @@ export default function QuickSearch() {
         }
     }
     let filterData = (event, option) => {
-        let { value } = event.target.value;
+        let { value } = event.target;
         let _filter =  {};
         
 
