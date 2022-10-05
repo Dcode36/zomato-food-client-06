@@ -47,7 +47,7 @@ export default function OrderDetail() {
     let [subTotal, setSubTotal] = useState(0);
     let [menuItem, setMenuItem] = useState([]);
     let getRestaurantDetails = async () => {
-        let URL = "http://localhost:4000/api/get-restaurant-by-id/" + params.id;
+        let URL = "https://zomato-food-06.herokuapp.com/api/get-restaurant-by-id/" + params.id;
         try {
             let response = await axios.get(URL);
             let data = response.data;
@@ -85,7 +85,7 @@ export default function OrderDetail() {
             alert("unable to load payment sdk ")
             return false
         }
-        let URL = "http://localhost:4000/api/payment";
+        let URL = "https://zomato-food-06.herokuapp.com/api/payment";
         let sendData = {
             amount: subTotal,
       
@@ -122,7 +122,7 @@ export default function OrderDetail() {
     }
 
     let getMenuList = async () => {
-        let URL = "http://localhost:4000/api/get-menu-item?rid=" + params.id;
+        let URL = "https://zomato-food-06.herokuapp.com/api/get-menu-item?rid=" + params.id;
         try {
             let response = await axios.get(URL);
             let data = response.data;
