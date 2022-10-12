@@ -3,17 +3,17 @@
   "name": "Create React App Sample",
   "icons": [
     {
-      "src": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTx-cc8d8vBDNCbr09BFD3wsC_0mQvVfRKpQQ&usqp=CAU",
+      "src": "https://seeklogo.com/images/Z/zomato-logo-200607EC4C-seeklogo.com.png",
       "sizes": "64x64 32x32 24x24 16x16",
       "type": "image/x-icon"
     },
     {
-      "src": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTx-cc8d8vBDNCbr09BFD3wsC_0mQvVfRKpQQ&usqp=CAU",
+      "src": "https://seeklogo.com/images/Z/zomato-logo-200607EC4C-seeklogo.com.png",
       "type": "image/png",
       "sizes": "192x192"
     },
     {
-      "src": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTx-cc8d8vBDNCbr09BFD3wsC_0mQvVfRKpQQ&usqp=CAU",
+      "src": "https://seeklogo.com/images/Z/zomato-logo-200607EC4C-seeklogo.com.png",
       "type": "image/png",
       "sizes": "512x512"
     }

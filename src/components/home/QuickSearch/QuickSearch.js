@@ -6,21 +6,21 @@ import SearchResult from './SearchResult'
 import axios from 'axios'
 import { useSearchParams } from 'react-router-dom'
 export default function QuickSearch() {
-    let _filter =  {};
+    let _filter = {};
     let [searchParams] = useSearchParams();
-    let [ filter , setFilter ] = useState({});
+    let [filter, setFilter] = useState({});
     let [mealType, setMealType] = useState(null);
     let [filterObj, setFilterObj] = useState({});
     let [locationList, setLocationList] = useState([]);
 
     let [searchList, setSearchList] = useState([]);
     let getFilterDetails = async (_filter) => {
-        _filter = { ..._filter}
+        _filter = { ..._filter }
         let URL = "https://zomato-food-06.herokuapp.com/api/filter";
         // filter
 
         if (searchParams.get("meal_type"))
-        _filter['mealtype'] = searchParams.get("meal_type")
+            _filter['mealtype'] = searchParams.get("meal_type")
 
         try {
             let response = await axios.post(URL, _filter);
@@ -47,14 +47,14 @@ export default function QuickSearch() {
     }
     let filterData = (event, option) => {
         let { value } = event.target;
-        let _filter =  {};
-        
+        let _filter = {};
+
 
         switch (option) {
             case 'location':
                 _filter['location'] = value;
 
-                break; 
+                break;
 
             case "sort":
                 _filter["sort"] = value;
@@ -64,40 +64,45 @@ export default function QuickSearch() {
                 _filter["lcost"] = cost[0];
                 _filter["hcost"] = cost[1];
                 break;
-                case "cuisine":
-                    let checked = event.target.checked;
-                    // console.log(checked);
-            
-                    let cuisine =
-                      filterObj.cuisine == undefined ? [] : [...filterObj.cuisine];
-                    if (checked) {
-                      let isAvailable = cuisine.includes(Number(value));
-                      if (isAvailable === false) cuisine.push(Number(value));
-                    } else {
-                      let position = cuisine.indexOf(Number(value));
-                      cuisine.splice(position, 1);
-                    }
-                    if (cuisine.length > 0) {
-                      _filter["cuisine"] = cuisine;
-                    }
-            
-                    break;
+            case "cuisine":
+                let checked = event.target.checked;
+                // console.log(checked);
+
+                let cuisine =
+                    filterObj.cuisine == undefined ? [] : [...filterObj.cuisine];
+                if (checked) {
+                    let isAvailable = cuisine.includes(Number(value));
+                    if (isAvailable === false) cuisine.push(Number(value));
+                } else {
+                    let position = cuisine.indexOf(Number(value));
+                    cuisine.splice(position, 1);
+                }
+                if (cuisine.length > 0) {
+                    _filter["cuisine"] = cuisine;
+                }
+
+                break;
+            case "page":
+                _filter["page"] = value;
+                break;
+            default:
+                break;
 
         }
-        setFilter({...filter, ..._filter})
+        setFilter({ ...filter, ..._filter })
 
         getFilterDetails(_filter);
-       
+
     }
     useEffect(() => {
         getFilterDetails(filter);
         getLocationList();
     }, []);
 
-    useEffect(()=>{
+    useEffect(() => {
         getFilterDetails(filter)
 
-    },[filter])
+    }, [filter])
 
     return (
         <>
@@ -108,15 +113,15 @@ export default function QuickSearch() {
 
             <div className=" search-result">
                 <div className="col-lg-12 col-md-12 col-sm-12 col-xs-12 d-lg-flex ">
-                <div className="col-lg-4 col-md-5 col-sm-12 col-xs-12">
-                    <FilterSection
-                        locationList={locationList}
-                        filterData={filterData}
-                    />
-                </div>
-                <div className="col-lg-7 col-md-8 col-sm-12 col-xs-12">
-                    <SearchResult searchList={searchList} />
-                </div>
+                    <div className="col-lg-4 col-md-5 col-sm-12 col-xs-12">
+                        <FilterSection
+                            locationList={locationList}
+                            filterData={filterData}
+                        />
+                    </div>
+                    <div className="col-lg-7 col-md-8 col-sm-12 col-xs-12">
+                        <SearchResult searchList={searchList} />
+                    </div>
                 </div>
             </div>
         </>
