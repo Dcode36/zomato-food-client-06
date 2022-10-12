@@ -97,7 +97,7 @@ export default function FilterSection(props) {
                             </div>
                         </div>
                         <div className="pagi py-4 ">
-                        <Pagiganation/>
+                     
                         </div>
                     </div>
                 </div>

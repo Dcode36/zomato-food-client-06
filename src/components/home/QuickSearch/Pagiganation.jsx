@@ -10,7 +10,7 @@ export default function Pagiganation({ filterData, pageCount }) {
             return (
               <button
                 className="btn btn-clr  ms-2"
-                onChange={(event) => filterData(event, "page")}
+                onChange={(event)=> filterData(event.value, "page")}
                 value={i + 1}
                 key={i}
               >

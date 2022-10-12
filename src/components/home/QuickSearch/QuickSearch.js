@@ -5,6 +5,7 @@ import FilterSection from './FilterSection'
 import SearchResult from './SearchResult'
 import axios from 'axios'
 import { useSearchParams } from 'react-router-dom'
+import Pagiganation from './Pagiganation'
 export default function QuickSearch() {
     let _filter = {};
     let [searchParams] = useSearchParams();
@@ -66,7 +67,7 @@ export default function QuickSearch() {
                 break;
             case "cuisine":
                 let checked = event.target.checked;
-                // console.log(checked);
+                
 
                 let cuisine =
                     filterObj.cuisine == undefined ? [] : [...filterObj.cuisine];
@@ -122,8 +123,11 @@ export default function QuickSearch() {
                     <div className="col-lg-7 col-md-8 col-sm-12 col-xs-12">
                         <SearchResult searchList={searchList} />
                     </div>
+                   
                 </div>
+               
             </div>
+            <Pagiganation/>
         </>
     )
 }
