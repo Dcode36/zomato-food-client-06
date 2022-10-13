@@ -16,9 +16,11 @@ export default function Pagiganation({ filterData, pageCount }) {
               >
                 {i + 1}
               </button>
+              
             );
           })}
       </div>
+      
         </>
     )
 }

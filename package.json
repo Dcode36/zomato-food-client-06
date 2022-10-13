@@ -12,6 +12,7 @@
     "bootstrap-icons": "^1.9.1",
     "i": "^0.3.7",
     "jwt-decode": "^3.1.2",
+    "mdb-react-ui-kit": "^4.2.0",
     "npm": "^8.19.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",

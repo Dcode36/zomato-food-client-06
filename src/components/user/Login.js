@@ -19,8 +19,8 @@ export default function Login(props) {
                             <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                         </div>
                         <div className="modal-body">
-                            <div className="row justify-content-center">
-                                <div className="col-10 d-flex flex-column align-item-center my-2">
+                            <div className="row justify-content-center ms-5">
+                                <div className="col-10 d-flex flex-column align-item-center justify-content-center ms-5 my-2">
 
                                     <GoogleLogin
                       onSuccess={(credentialResponse) => {
@@ -33,8 +33,8 @@ export default function Login(props) {
                                 </div>
                             </div>
                         </div>
-                        <div className="modal-footer ">
-                            <p >Don't Have an account<a href="">create an account</a></p>
+                        <div className="modal-footer  ">
+                            <p  className='me-5'>Don't Have an account <a href="" className='me-3'>create an account</a></p>
                         </div>
                     </div>
                 </div>

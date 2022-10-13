@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+
 import axios from 'axios'
 import QuickSearchItem from './QuickSearchItem'
 
@@ -44,7 +45,7 @@ export default function QuickItem(props) {
                     }
                 </div>
                 <div className='py-5'>
-
+               
                 </div>
             </div>
 

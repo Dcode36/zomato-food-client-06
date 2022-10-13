@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { GoogleOAuthProvider } from '@react-oauth/google';
 import Login from '../user/Login';
 import SignUp from '../user/SignUp'
-import 'bootstrap/dist/css/bootstrap.css';
+import 'bootstrap/dist/css/bootstrap.css'; 
 import jwt_decode from "jwt-decode";
 
 
@@ -20,13 +20,13 @@ export default function Navbar(props) {
   useEffect(()=>{
     let token = localStorage.getItem("auth_token")
     console.log(token)
-    // if(token){
+    if(token){
       
       
 
-    // }else{
-    //   setUserLogin(null)
-    // }
+    }else{
+      setUserLogin(null)
+    }
    
 
   },[])

@@ -31,11 +31,7 @@ export default function SearchItem(props) {
                 <div className="price row">
 
                     <div className="col-lg-12 col-md-12 col-sm-12 col-xs-12 w-lighte">
-                        <p>CUISINES: <span className='fw-bold mx-2' >
-
-
-
-                        </span> </p>
+                        <p>Ratings: <span className='fw-bold mx-2' >{item.aggregate_rating} Stars</span> </p>
                         <p> COST FOR TWO: <span className='fw-bold mx-2' >₹ {item.min_price}</span> </p>
                     </div>
 
