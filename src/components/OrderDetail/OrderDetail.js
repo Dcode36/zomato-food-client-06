@@ -6,6 +6,7 @@ import { modal } from 'bootstrap';
 import { useEffect } from 'react';
 import { useState } from 'react';
 import Carousel from 'react-multi-carousel';
+import Swal from 'sweetalert2';
 import 'react-multi-carousel/lib/styles.css';
 
 export default function OrderDetail() {
@@ -104,9 +105,13 @@ export default function OrderDetail() {
             image: "https://upload.wikimedia.org/wikipedia/commons/7/75/Zomato_logo.png",
             order_id:order.id, //This is a sample Order ID. Pass the `id` obtained in the response of Step 1
             handler: function (response) {
-                alert(response.razorpay_payment_id);
-                alert(response.razorpay_order_id);
-                alert(response.razorpay_signature)
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Payment Successfully',
+               
+                  }).then(()=>{
+                    window.location.reload();
+                  })
             },
             prefill: {
                 "name": "Digvijay kadam",
