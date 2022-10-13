@@ -8,7 +8,7 @@ export default function SearchResult(props) {
 
   return (
     <>
-      <div className="col-12 mt-4 search-result-border">
+      <div className="col-12 mt-4 search-result-border ">
         {
           searchList.map((item,index)=>{
             return <SearchItem key={index} item ={item}/>

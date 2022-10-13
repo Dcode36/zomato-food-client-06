@@ -8,7 +8,7 @@ export default function Login(props) {
     let { success, error } = props;
     return (
         <>
-            <GoogleOAuthProvider clientId='384451565383-l2ki9ltq8k28vg1h7b5l5er814jbi9dv.apps.googleusercontent.com'>
+
 
             <div className="modal fade" id="login" tabIndex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                 <div className="modal-dialog">
@@ -23,23 +23,23 @@ export default function Login(props) {
                                 <div className="col-10 d-flex flex-column align-item-center justify-content-center ms-5 my-2">
 
                                     <GoogleLogin
-                      onSuccess={(credentialResponse) => {
-                        success(credentialResponse);
-                      }}
-                      onError={() => {
-                        error();
-                      }}
-                    />
+                                        onSuccess={(credentialResponse) => {
+                                            success(credentialResponse);
+                                        }}
+                                        onError={() => {
+                                            error();
+                                        }}
+                                    />
                                 </div>
                             </div>
                         </div>
                         <div className="modal-footer  ">
-                            <p  className='me-5'>Don't Have an account <a href="" className='me-3'>create an account</a></p>
+                            <p className='me-5'>Don't Have an account <a href="" className='me-3'>create an account</a></p>
                         </div>
                     </div>
                 </div>
             </div>
-</GoogleOAuthProvider>
+
         </>
     )
 }

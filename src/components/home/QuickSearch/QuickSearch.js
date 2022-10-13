@@ -6,7 +6,7 @@ import SearchResult from './SearchResult'
 import axios from 'axios'
 import { useSearchParams } from 'react-router-dom'
 import Pagiganation from './Pagiganation'
-export default function QuickSearch() {
+export default function QuickSearch(props) {
     let _filter = {};
     let [searchParams] = useSearchParams();
     let [filter, setFilter] = useState({});

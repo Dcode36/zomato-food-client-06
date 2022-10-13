@@ -1,26 +1,26 @@
 import React from 'react'
 
 export default function Pagiganation({ filterData, pageCount }) {
-    return (
-        <>
-            <div className="my-4 btn-main d-flex justify-content-center mx-0">
+  return (
+    <>
+      <div className="my-4 btn-main d-flex justify-content-center mx-0">
         {Array(pageCount)
           .fill(1)
           .map((v, i) => {
             return (
               <button
                 className="btn btn-clr  ms-2"
-                onChange={(event)=> filterData(event.value, "page")}
+                onChange={(event) => filterData(event.value, "page")}
                 value={i + 1}
                 key={i}
               >
                 {i + 1}
               </button>
-              
+
             );
           })}
       </div>
-      
-        </>
-    )
+
+    </>
+  )
 }

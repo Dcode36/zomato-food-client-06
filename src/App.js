@@ -9,8 +9,7 @@ import SignUp from './components/user/SignUp';
 
 function App() {
   return <>
-  <Login/>
-  <SignUp/>
+ 
   <Routes>
     <Route path= "/" element ={<Home />}/>
     <Route path= "/quick-search" element ={<QuickSearch/> }/>
