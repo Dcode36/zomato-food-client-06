@@ -5,8 +5,8 @@ import { useNavigate} from 'react-router-dom'
 export default function QuickSearchItem(props) {
     let { meal} = props;
     let navigate = useNavigate();
-    let gotoQuickSearch = (id)=>{
-        navigate("/quick-search?meal_type="+ id );
+    let gotoQuickSearch = ()=>{
+        navigate("/quick-search" );
     }
     return (
     <>
