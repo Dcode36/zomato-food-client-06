@@ -72,7 +72,7 @@ export default function Navbar(props) {
           <div className="nav-btns my-4 ">
 
             {
-              userLogin === null ? (<div><a href="#" className='px-4 text-decoration-none text-white fs-6' data-bs-toggle="modal" data-bs-target="#login"
+              userLogin === null ? (<div><a href="/" className='px-4 text-decoration-none text-white fs-6' data-bs-toggle="modal" data-bs-target="#login"
               >
                 Login
               </a>

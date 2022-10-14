@@ -22,17 +22,19 @@
   font-size: 3rem;
 
 }
-.logo p{
+
+.logo p {
   font-size: 3.5rem;
   margin-top: 10px !important;
 }
 
-.caroimg{
-  
+.caroimg {
+
   height: 90vh;
   width: 100%;
-  
+
 }
+
 .item-info {
   color: #192F60;
 }
@@ -46,38 +48,47 @@
   width: 400px !important;
   box-shadow: 0px 3px 6px #00000029;
   padding: 0 !important;
- cursor: pointer;
+  cursor: pointer;
 
 }
-.QuickProduct:hover{
+
+.QuickProduct:hover {
   box-shadow: 10px 6px 12px #00000029;
 }
-.Serach-Item{
+
+.Serach-Item {
   cursor: pointer;
 }
+
 .QuickProduct img {
   height: 180px;
   width: 200px;
 }
 
-.inputes{
-margin-left: 25%;
+.inputes {
+  margin-left: 25% ;
 
 }
-.list1{
+
+.list1 {
   width: 183px !important;
 }
-.inputes1{
-margin-top: 13px !important;
-padding: 10px;
+
+.inputes1 {
+  margin-top: 13px !important;
+
+  padding: 10px;
 
 }
-.inputes2{
+
+.inputes2 {
   width: 450px !important;
 }
+
 .list-group {
   width: 250px;
 }
+
 /* common navbar */
 
 .common-navbar {
@@ -102,7 +113,7 @@ padding: 10px;
 .nav-btn {
   margin: 25px 50px;
   cursor: pointer;
- 
+
 }
 
 .nav-btn a {
@@ -201,35 +212,40 @@ padding: 10px;
   cursor: pointer;
 
 }
-.contact-info{
+
+.contact-info {
   color: #192F60;
   cursor: pointer;
 }
+
 .call {
   color: #F67082;
 }
-.add{
+
+.add {
   position: relative;
 }
 
-.add img{
+.add img {
   height: 140px;
   width: 140px;
   margin: 20px;
   border-radius: 30px;
-  
+
 }
 
-.modal-body{
+.modal-body {
   color: #192F60;
 }
-.inc-dic{
-position: absolute;
-right: 35%;
-bottom: 10px;
-background-color: white;
+
+.inc-dic {
+  position: absolute;
+  right: 35%;
+  bottom: 10px;
+  background-color: white;
 }
-.inc-dic span{
+
+.inc-dic span {
   height: 20px;
   width: 20px;
   border: 10px;
@@ -237,10 +253,12 @@ background-color: white;
   cursor: pointer;
 
 }
-.inc-dic span:hover{
+
+.inc-dic span:hover {
   background-color: rgba(168, 167, 167, 0.341);
 }
-.search-image{
+
+.search-image {
   height: 60px;
   width: 60px;
   border-radius: 50%;
@@ -248,29 +266,34 @@ background-color: white;
 }
 
 .add-btn {
-  left:35%;
+  left: 35%;
   top: 80%;
   padding: 10px;
 }
-.search-result{
-  margin:0 8%;
+
+.search-result {
+  margin: 0 8%;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-.footer-img{
+
+.footer-img {
   height: 160px;
   width: 150px !important;
   border-radius: 10px;
 }
-.footer-img:hover{
+
+.footer-img:hover {
   height: 175px;
   width: 190px !important;
 }
-.mbfooter{
+
+.mbfooter {
   width: 97.5%;
-  box-shadow: 1px 10px 8px 8px  #00000029;
+  box-shadow: 1px 10px 8px 8px #00000029;
 }
-.mbfooter:hover{
+
+.mbfooter:hover {
   box-shadow: 2px 10px 8px 8px #00000029;
 }
