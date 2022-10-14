@@ -1,5 +1,5 @@
 import React ,{useRef}from 'react'
-import { useParams } from 'react-router-dom'
+import { useNavigate, useParams } from 'react-router-dom'
 import axios from 'axios';
 import CommonNavbar from '../home/CommonNavbar'
 import { modal } from 'bootstrap';
@@ -10,6 +10,7 @@ import Swal from 'sweetalert2';
 import 'react-multi-carousel/lib/styles.css';
 
 export default function OrderDetail() {
+    let navigate = useNavigate();
     let emailRef = useRef();
     const responsive = {
         desktop: {
@@ -97,19 +98,20 @@ export default function OrderDetail() {
 
        console.log();
         var options = {
-            key: "rzp_test_Wni9cy81wt5dpi", // Enter the Key ID generated from the Dashboard
-            amount: order.amount, // Amount is in currency subunits. Default currency is INR. Hence, 50000 refers to 50000 paise
+            key: "rzp_test_Wni9cy81wt5dpi", 
+            amount: order.amount, 
             currency: "INR",
             name: "zomato clone payment",
             description: "This is food payment",
             image: "https://upload.wikimedia.org/wikipedia/commons/7/75/Zomato_logo.png",
-            order_id:order.id, //This is a sample Order ID. Pass the `id` obtained in the response of Step 1
+            order_id:order.id,
             handler: function (response) {
                 Swal.fire({
                     icon: 'success',
                     title: 'Payment Successfully',
                
                   }).then(()=>{
+                    navigate('/')
                     window.location.reload();
                   })
             },

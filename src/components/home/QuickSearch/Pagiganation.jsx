@@ -1,4 +1,4 @@
-import React from 'react'
+import React from "react";
 
 export default function Pagiganation({ filterData, pageCount }) {
   return (
@@ -10,17 +10,15 @@ export default function Pagiganation({ filterData, pageCount }) {
             return (
               <button
                 className="btn btn-clr  ms-2"
-                onChange={(event) => filterData(event.value, "page")}
+                onChange={(event) => filterData(event, "page")}
                 value={i + 1}
                 key={i}
               >
                 {i + 1}
               </button>
-
             );
           })}
       </div>
-
     </>
-  )
+  );
 }
