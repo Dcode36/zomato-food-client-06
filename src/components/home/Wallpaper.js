@@ -6,7 +6,7 @@ export default function Wallpaper() {
   return (
     <div>
       <div className="wallpaper-section">
-      <Navbar/>
+      <Navbar/> 
       <SearchSection/>
       </div>
     </div>

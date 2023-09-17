@@ -11,7 +11,7 @@ export default function QuickSearchItem(props) {
     return (
     <>
             <div 
-            className="QuickProduct mt-sm-1 col-lg-4  col-md-6  col-sm-10 col-xs-10 d-flex "
+            className="QuickProduct  col-lg-4  col-md-6  col-sm-10 col-xs-10 d-flex  my-2"
             onClick={()=>gotoQuickSearch(meal.meal_type)}
             >
                 <img src={"/images/" + meal.image}/>

@@ -49,7 +49,7 @@ export default function OrderDetail() {
     let [subTotal, setSubTotal] = useState(0);
     let [menuItem, setMenuItem] = useState([]);
     let getRestaurantDetails = async () => {
-        let URL = "https://zomato-food-06.herokuapp.com/api/get-restaurant-by-id/" + params.id;
+        let URL = "http://localhost:8900/api/get-restaurant-by-id/" + params.id;
         try {
             let response = await axios.get(URL);
             let data = response.data;
@@ -87,7 +87,7 @@ export default function OrderDetail() {
             alert("unable to load payment sdk ")
             return false
         }
-        let URL = "https://zomato-food-06.herokuapp.com/api/payment";
+        let URL = "http://localhost:8900/api/payment";
         let sendData = {
             amount: subTotal,
       
@@ -129,7 +129,7 @@ export default function OrderDetail() {
     }
 
     let getMenuList = async () => {
-        let URL = "https://zomato-food-06.herokuapp.com/api/get-menu-item?rid=" + params.id;
+        let URL = "http://localhost:8900/api/get-menu-item?rid=" + params.id;
         try {
             let response = await axios.get(URL);
             let data = response.data;
@@ -177,8 +177,8 @@ export default function OrderDetail() {
         <>
             <CommonNavbar />
 
-            <div className="image-gallery col-lg-12 col-md-12 col-sm-12 col-xs-12 d-lg-flex justify-content-center ">
-                <img src={"/images/" + rDetails.image} className="col-sm-12 col-xs-12" alt='breakfast' />
+            <div className="image-gallery row d-lg-flex justify-content-center ">
+                <img src={"/images/" + rDetails.image} className="col-lg-12 col-md-12 col-sm-12 col-xs-12" alt='breakfast' />
                 <button
                     className='py-2 px-2 fw-bold border-0'
                     data-bs-toggle="modal" data-bs-target="#exampleModal">

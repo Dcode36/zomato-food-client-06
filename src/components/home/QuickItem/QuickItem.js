@@ -6,7 +6,7 @@ import QuickSearchItem from './QuickSearchItem'
 export default function QuickItem(props) {
     let [mealType, setMealType] = useState([]);
     let getQuickSerachData = async () => {
-        let URL = "https://zomato-food-06.herokuapp.com/api/get-meal-type";
+        let URL = "http://localhost:8900/api/get-meal-type";
 
         try {
             let responce = await axios.get(URL);

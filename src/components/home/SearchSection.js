@@ -18,7 +18,7 @@ export default function SearchSection() {
         }
 
 
-        let URL = "https://zomato-food-06.herokuapp.com/api/get-location-by-city?city=" + city;
+        let URL = "http://localhost:8900/api/get-location-by-city?city=" + city;
 
         try {
             let responce = await axios.get(URL);
@@ -48,7 +48,7 @@ export default function SearchSection() {
         }
 
 
-        let URL = `https://zomato-food-06.herokuapp.com/api/get-restaurnat-by-location-id?lid=${selectLoc.location_id}&rest=${restaurant}`;
+        let URL = `http://localhost:8900/api/get-restaurnat-by-location-id?lid=${selectLoc.location_id}&rest=${restaurant}`;
 
         try {
             let response = await axios.get(URL);
@@ -61,14 +61,14 @@ export default function SearchSection() {
             console.log(error)
         }
     }
-    
-    let gotoRestaurant = (id)=>{
+
+    let gotoRestaurant = (id) => {
         navigate('/restaurant/' + id);
-       
+
     }
     return (
         <>
-            <div className="container d-flex justify-content-center align-items-center ">
+            <div className=" d-flex justify-content-center align-items-center ">
                 <div className="logo d-flex justify-content-center align-items-center rounded-circle">
                     <p className='text-danger text-align-center  fw-bold '>e!</p>
                 </div>
@@ -78,64 +78,61 @@ export default function SearchSection() {
                 <p className='fs-2 text-white fw-bold text-center py-2'>Find the best restaurants, cafés, and bars</p>
             </div>
 
+            <div className='d-flex row justify-content-center align-items-center flex-wrap position-relative'>
+                <input
+                    type="text"
+                    className=' p-2 col-lg-3 col-md-3 col-sm-10 col-xs-10'
+                    placeholder='Please type a location'
+                    onChange={getLocationList}
+                    ref={locationRef}
+                />
+                <ul className="list-group  position-absolute   top-0 mt-5 ">
+                    {locList.map((location) => {
+                        return <li className="list-group-item list1" key={location._id}
+                            onClick={() => selectLocation(`${JSON.stringify(location)}`)}>
+                            {location.name},{location.city}
+                        </li>
+                    })
+                    }
+                </ul>
 
-            <div className=" d-lg-flex justify-content-lg-center   d-sm-block justify-content-sm-center  inputes">
-                <div className="d-flex flex-column postion-relative col-lg-2 col-md-4 mx-sm-2 col-sm-8 col-xs-12">
-                    <input type="text"
-                        className=' py-2 inputes1 '
-                        placeholder='Please type a location'
-                        onChange={getLocationList}
-                        ref={locationRef}
-                    />
-                    <ul className="list-group  position-absolute mt-5  ">
-                        {locList.map((location) => {
-                            return <li className="list-group-item list1" key={location._id}
-                                onClick={() => selectLocation(`${JSON.stringify(location)}`)}>
-                                {location.name},{location.city}
-                            </li>
-                        })
-                        }
+                <input
+                    type="text"
+                    className='p-2 col-lg-6 col-md-6 col-sm-8 col-xs-8'
+                    placeholder='Search for restaurants'
+                    onChange={getRestaurantDetails}
+                    disabled={restsDisable}
+                />
+                <ul className="list-group  position-absolute  mt-5 " style={{ width: " 100%" }}>
+                    {restaurantList.map((restaurant) => {
+                        return <li
+                            className="list-group-item"
+                            key={restaurant._id}
+                            onClick={() => gotoRestaurant(restaurant._id)}
+                        >
 
-                    </ul>
-                </div>
-                <div className="d-flex flex-column  postion-relative col-lg-9 col-md-4 mx-sm-2 col-sm-8 col-xs-12">
-                    <div className="col-lg-5 col-md-7 mx-sm-2 my-sm-1  col-sm-8 col-xs-12 py-2 ">
-                        <input type="text" className='py-2 col-12 inputes2'
-                            placeholder='Search for restaurants'
-                            onChange={getRestaurantDetails}
-                            disabled={restsDisable}
-                        />
-                        <ul className="list-group  position-absolute  " style={{ width: " 31%" }}>
-                            {restaurantList.map((restaurant) => {
-                                return <li
-                                    className="list-group-item"
-                                    key={restaurant._id}
-                                    onClick={()=>gotoRestaurant(restaurant._id)}
-                                >
+                            <div className="d-flex ">
+                                <img src={"/images/" + restaurant.image} alt="" className='search-image' />
+                                <div className="restaurant ms-3">
+                                    <p className='fw-bold '>
+                                        {restaurant.name}
+                                        <br />
+                                        <span className='small fw-lighter'>
+                                            {restaurant.locality},{restaurant.city}
+                                        </span>
+                                    </p>
 
-                                    <div className="d-flex ">
-                                        <img src={"/images/" + restaurant.image} alt="" className='search-image' />
-                                        <div className="restaurant ms-3">
-                                            <p className='fw-bold '>
-                                                {restaurant.name}
-                                                <br />
-                                                <span className='small fw-lighter'>
-                                                    {restaurant.locality},{ restaurant.city}
-                                                </span>
-                                            </p>
+                                </div>
+                            </div>
+                        </li>
+                    })
+                    }
+                </ul>
+            </div>
+            <div className="py-5 "></div>
 
-                                        </div>
-                                    </div>
-                                </li>
-                            })
-                            }
 
-                        </ul>
-                    </div>
 
-                </div>
-
-            </div >
         </>
     )
 }
