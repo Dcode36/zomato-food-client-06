@@ -18,7 +18,7 @@ export default function SearchSection() {
         }
 
 
-        let URL = "http://localhost:8900/api/get-location-by-city?city=" + city;
+        let URL = "https://zomato-clone-06.onrender.com/api/get-location-by-city?city=" + city;
 
         try {
             let responce = await axios.get(URL);
@@ -48,7 +48,7 @@ export default function SearchSection() {
             return false;
         }
 
-        let URL = `http://localhost:8900/api/get-restaurnat-by-location-id?lid=${selectLoc.location_id}&rest=${restaurant}`;
+        let URL = `https://zomato-clone-06.onrender.com/api/get-restaurnat-by-location-id?lid=${selectLoc.location_id}&rest=${restaurant}`;
 
         try {
             let response = await axios.get(URL);

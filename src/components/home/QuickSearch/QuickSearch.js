@@ -17,7 +17,7 @@ export default function QuickSearch() {
   let [searchList, setSearchList] = useState([]);
   let getFilterDetails = async (_filter) => {
     _filter = { ..._filter };
-    let URL = "http://localhost:8900/api/filter";
+    let URL = "https://zomato-clone-06.onrender.com/api/filter";
     // filter
 
     if (searchParams.get("meal_type")) {
@@ -34,7 +34,7 @@ export default function QuickSearch() {
     }
   };
   let getLocationList = async () => {
-    let URL = "http://localhost:8900/api/get-location";
+    let URL = "https://zomato-clone-06.onrender.com/api/get-location";
 
     try {
       let response = await axios.get(URL);
