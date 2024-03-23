@@ -1,4 +1,4 @@
-import React ,{useRef}from 'react'
+import React, { useRef } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
 import axios from 'axios';
 import CommonNavbar from '../home/CommonNavbar'
@@ -90,30 +90,30 @@ export default function OrderDetail() {
         let URL = "http://localhost:8900/api/payment";
         let sendData = {
             amount: subTotal,
-      
-            
-        };
-       let {data } =  await axios.post(URL, sendData);
-       let {order} = data
 
-       console.log();
+
+        };
+        let { data } = await axios.post(URL, sendData);
+        let { order } = data
+
+        console.log();
         var options = {
-            key: "rzp_test_Wni9cy81wt5dpi", 
-            amount: order.amount, 
+            key: "rzp_test_Wni9cy81wt5dpi",
+            amount: order.amount,
             currency: "INR",
             name: "zomato clone payment",
             description: "This is food payment",
             image: "https://upload.wikimedia.org/wikipedia/commons/7/75/Zomato_logo.png",
-            order_id:order.id,
+            order_id: order.id,
             handler: function (response) {
                 Swal.fire({
                     icon: 'success',
                     title: 'Payment Successfully',
-               
-                  }).then(()=>{
+
+                }).then(() => {
                     navigate('/')
                     window.location.reload();
-                  })
+                })
             },
             prefill: {
                 "name": "Digvijay kadam",
@@ -124,7 +124,7 @@ export default function OrderDetail() {
         };
         var paymentObject = new window.Razorpay(options);
         paymentObject.open();
-      
+
 
     }
 
@@ -177,14 +177,18 @@ export default function OrderDetail() {
         <>
             <CommonNavbar />
 
-            <div className="image-gallery row d-lg-flex justify-content-center ">
+            <div className="image-gallery  d-lg-flex justify-content-center  position-relative">
                 <img src={"/images/" + rDetails.image} className="col-lg-12 col-md-12 col-sm-12 col-xs-12" alt='breakfast' />
+                {/* 
                 <button
-                    className='py-2 px-2 fw-bold border-0'
+                    className='py-2 px-2 fw-bold border-0 w-100 position-absolute bottom-0 right-0'
+                    style={{ width: "100px" }}
                     data-bs-toggle="modal" data-bs-target="#exampleModal">
                     Click to see Image Gallery
+                </button> */}
+                <button className='py-2 px-2 border-0 fw-bold' data-bs-toggle="modal" data-bs-target="#exampleModal">
+                    Click to see Image Gallery
                 </button>
-
             </div>
 
             <div className="product-detail  ">

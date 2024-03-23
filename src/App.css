@@ -15,10 +15,11 @@
 }
 
 @media (max-width:900px) {
-  .wallpaper-section{
+  .wallpaper-section {
     height: 100%;
   }
 }
+
 .logo {
   margin-top: 10vh;
   height: 100px;
@@ -70,7 +71,7 @@
 }
 
 .inputes {
-  margin-left: 25% ;
+  margin-left: 25%;
 
 }
 
@@ -97,9 +98,7 @@
 
 .common-navbar {
   height: 9vh;
-  background-image: url(../public/images/navbar.jpg);
-  background-position: center;
-  background-repeat: no-repeat;
+  background-color: red;
   background-size: cover;
   overflow: hidden;
 

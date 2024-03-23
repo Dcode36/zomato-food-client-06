@@ -14,6 +14,7 @@ export default function QuickItem(props) {
             if (status) {
                 setMealType([...meal_type]);
             }
+            setLoading(false)
         } catch (error) {
             alert(error);
             console.log(error)
@@ -22,6 +23,7 @@ export default function QuickItem(props) {
     useEffect(() => {
         getQuickSerachData()
     }, [])
+    const [loading, setLoading] = useState(true);
     return (
         <>
             <div className="container">
@@ -36,13 +38,24 @@ export default function QuickItem(props) {
 
 
 
-                <div className="row ">
+                <div className="row d-flex gap-3">
                     {
-                        mealType.map((meal) => {
-                            return <QuickSearchItem meal={meal} key={meal._id} />;
-                        })
+                        loading ?
+                            <>
+                                <div>Loading.....</div>
+                            </>
+                            :
+                            <>
+                                {
+                                    mealType.map((meal) => {
+                                        return <QuickSearchItem meal={meal} key={meal._id} />;
+                                    })
+
+                                }
+                            </>
 
                     }
+
                 </div>
                 <div className='py-5'>
 
